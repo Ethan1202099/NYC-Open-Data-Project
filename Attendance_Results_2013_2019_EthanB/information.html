@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>2013-2019 Attendance Analysis</title>
+    <title>Information for 2013-2019 Attendance</title>
     <!-- Import libraries and link files  -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <link href="c3.css" rel="stylesheet" type="text/css" />
@@ -12,28 +12,54 @@
     <script src="d3.js"></script>
     <script src="helper.js"></script>  
     <script src="script.js"></script>
+    <script src="fillDropDown.js"></script>  
   </head>
-
+  
   <body onload="init()">
     <div id="banner" class="container center">
-      <h1>HomePage of Attendance 2013-2019</h1>
+      <h1>Information of Attendance 2013-2019</h1>
     </div>
-    <div class="container subbanner">
+    <div id="subbanner" class="container center">
+    </div>
+    <div class="container center subbanner">
       <div>
-        <p></p>
+      <a href="index.html">Home</a>
+      <a href="information.html">Info</a>
+      <a href="analysis.html">Analysis</a>
        </div>
     </div>
     <div class="container">
-      <div id="panel">
-        
+      <div id="leftpanel">
         <div class="card">
-        
+          <h1>It is about the Attendance Results From NYC Public School
+            District Where People were Late, On time, or Absent on 
+            Classes. These sets of data comes from the DOE</h1>   
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="leftpanel">
+        <div class="card">
+          <h3>By Report Type & Year</h3>
+          <input type="text" id="reporttype" placeholder="Enter Report Type">
+          <select id="Year"></select>
+          <hr></hr>
+          <a class="button" onclick="filterByreporttypeandyear()"> Search </a>
+        </div>
+
+        <div class="card">
+          <h3>By Grades & Grades</h3>
+          <input type="text" id="" placeholder="">
+          <hr></hr>
+          <a class="button" onclick="filterByandgrades()"> Search </a>
         </div>
 
       </div>
-      
-      <div class="card">
-       <div id="chart"></div> <!-- div for chart -->
+        
+      <div class="card" id="rightpanel">
+        <div id="output" class="container"></div>
+        <div id="result"></div>
       </div>
     </div>
 
@@ -42,4 +68,3 @@
     </div>  
   </body>
 </html>
-  

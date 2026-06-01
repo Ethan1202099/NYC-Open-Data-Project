@@ -78,3 +78,7 @@ nav a:hover{
 #output{
   flex-wrap:wrap;
 }
+
+.fitted{
+  max-width:200px;
+}
