@@ -10,9 +10,9 @@
     <link href="c3.css" rel="stylesheet" type="text/css" />
     <script src="c3.js"></script>
     <script src="d3.js"></script>
+    <script src="fillDropDown.js"></script>  
     <script src="helper.js"></script>  
     <script src="script.js"></script>
-    <script src="fillDropDown.js"></script>  
   </head>
   
   <body onload="init()">
@@ -22,10 +22,11 @@
     <div id="subbanner" class="container center">
     </div>
     <div class="container center subbanner">
-      <div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="information.html">Info</a>
       <a href="analysis.html">Analysis</a>
+    </nav>
        </div>
     </div>
     <div class="container">
@@ -42,17 +43,18 @@
       <div id="leftpanel">
         <div class="card">
           <h3>By Report Type & Year</h3>
-          <input type="text" id="reporttype" placeholder="Enter Report Type">
+          <input type="text" id="report_type" placeholder="Enter Report Type">
           <select id="Year"></select>
           <hr></hr>
           <a class="button" onclick="filterByreporttypeandyear()"> Search </a>
         </div>
 
         <div class="card">
-          <h3>By Grades & Grades</h3>
-          <input type="text" id="" placeholder="">
+          <h3>By Demograph & Grades</h3>
+          <select id="Demograph"></select>
+          <select id="Grade"></select>
           <hr></hr>
-          <a class="button" onclick="filterByandgrades()"> Search </a>
+          <a class="button" onclick="filterBydemographandgrades()"> Search </a>
         </div>
 
       </div>

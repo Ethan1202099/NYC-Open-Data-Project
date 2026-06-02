@@ -21,15 +21,21 @@ async function init(){
   result.innerHTML = `${ct} Results found`;
   output.innerHTML = build;  
 
-  
   let years = fillDropDown("year");
   document.getElementById("Year").innerHTML = years;
+
+  let demographs = fillDropDown("demographic_variable");
+  document.getElementById("Demograph").innerHTML = demographs;
+
+  let grades = fillDropDown("grade");
+  document.getElementById("Grade").innerHTML = grades;
 }
+
 
 function filterByreporttypeandyear(){
   let output = get("output");
-  let report_type = get("reporttype");
-  let year = get("Year");
+  let report_type = document.getElementById("report_type").value;
+  let year = document.getElementById("Year").value;
   let result = get("result");
   
   let build = "";
@@ -37,7 +43,7 @@ function filterByreporttypeandyear(){
 
   for(let i = 0; i < data.length; i++){
     let attendance = data[i];
-    if (attendance.report_type == reporttype && attendance.year == years){    
+    if (attendance.report_type == report_type && attendance.year == year){    
       build += card(attendance);
       ct++;
     }
@@ -47,3 +53,26 @@ function filterByreporttypeandyear(){
   output.innerHTML = build;
 
 }
+
+function filterBydemographandgrades(){
+  let output = get("output");
+  let demographic = document.getElementById("Demograph").value;
+  let grade = document.getElementById("Grade").value;
+  let result = get("result");
+  
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i++){
+    let attendance = data[i];
+    if (attendance.demographic_variable == demographic && attendance.grade == grade){   
+      build += card(attendance);
+      ct++;
+    }
+  }
+
+  result.innerHTML = `${ct} Results found`;
+  output.innerHTML = build;
+
+}
+
