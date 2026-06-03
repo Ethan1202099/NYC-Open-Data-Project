@@ -10,14 +10,13 @@
     <link href="c3.css" rel="stylesheet" type="text/css" />
     <script src="c3.js"></script>
     <script src="d3.js"></script>
-    <script src="fillDropDown.js"></script>  
     <script src="helper.js"></script>  
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
   </head>
   
   <body onload="init()">
     <div id="banner" class="container center">
-      <h1>Information of Attendance 2013-2019</h1>
+      <h1>Analysis of Attendance 2013-2019</h1>
     </div>
     <div class="container center subbanner">
       <nav>
@@ -26,6 +25,26 @@
         <a href="analysis.html">Analysis</a>
       </nav>
     </div>
+    <br>
+    <div class="container subbanner">
+      <div>
+        <p>This Project Shows our Analysis on Attendance Results from the 2013-2019 School Year Attendance <a href="https://opendata.cityofnewyork.us/">NYC Open Data</a></p>
+        <h4> Chart analysis of School Attendance Results 2013-2019</h4>
+       </div>
+    </div>
+
+    <div class="container center">
+      <p><span class="highlight">Scenario:</span>Chart analyzes the number of .</p>
+      <select id="chartType" style="width:150px;">
+        <option>Select Chart Type</option>
+        <option value="bar">Bar</option>
+        <option value="pie">Pie</option>
+        <option value="donut">Donut</option>
+      </select>
+      <a class="button" onclick="ByAttendanceResult()"> Display </a>
+    </div>
+    
+    <div class="container subbanner"><br></div>
 
     <div id="output"></div>
 
@@ -33,4 +52,4 @@
       <h3>Attendance Chart 2013-2019</h3>
     </div>  
   </body>
-</html>
+</html
