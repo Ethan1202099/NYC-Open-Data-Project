@@ -14,13 +14,13 @@ async function init(){
 }
 
 function ByAttendanceResult(){
-  let k12 = 0, kin = 0, first = 0, sec = 0, third = 0, fourth = 0,  other = 0;
+  let k12 = 0, kin = 0, first = 0, sec = 0, third = 0, fourth = 0, fifth = 0, sixth = 0, seventh = 0, eighth = 0, fm = 0, soph = 0, jun = 0, sen = 0, other = 0;
 
   for(let i = 0; i < data.length; i++){
     let attendance = data[i];
     if(attendance.grade == "PK in K-12 Schools"){
       k12++;
-    }else if(attendance.grade == "Pk in K-12 Schools"){
+    }else if(attendance.grade == "0K"){
       kin++;
     }else if(attendance.grade == "1"){
       first++;
@@ -30,6 +30,22 @@ function ByAttendanceResult(){
       third++;
     }else if(attendance.grade == "4"){
       fourth++;
+    }else if(attendance.grade == "5"){
+      fifth++;
+    }else if(attendance.grade == "6"){
+      sixth++;
+    }else if(attendance.grade == "7"){
+      seventh++;
+    }else if(attendance.grade == "8"){
+      eighth++;
+    }else if(attendance.grade == "9"){
+      fm++;
+    }else if(attendance.grade == "10"){
+      soph++;
+    }else if(attendance.grade == "11"){
+      jun++;
+    }else if(attendance.grade == "12"){
+      sen++;
     }else other++; 
   }
   let chartData = [
@@ -39,6 +55,14 @@ function ByAttendanceResult(){
       ["2", sec],
       ["3", third],
       ["4", fourth],
+      ["5", fifth],
+      ["6", sixth],
+      ["7", seventh],
+      ["8", eighth],
+      ["9", fm],
+      ["10", soph],
+      ["11", jun],
+      ["12", sen],
       ["OTHER", other]
     ];
 
